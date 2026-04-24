@@ -1,0 +1,91 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+}
+.app-header {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.card-header-custom {
+    background-color: transparent;
+    border-bottom: 1px solid #edf2f7;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+.form-label {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1rem;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+.btn-primary {
+    background-color: #3182ce;
+    border-color: #3182ce;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.btn-primary:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-1px);
+}
+.table {
+    margin-bottom: 0;
+}
+.table thead th {
+    background-color: #f8fafc;
+    color: #718096;
+    font-size: 0.7rem;          /* was 0.75rem */
+    text-transform: uppercase;
+    letter-spacing: 0.03em;     /* was 0.05em */
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0.6rem 0.75rem;    /* was 1rem 1.5rem */
+    font-weight: 600;
+}
+
+/* Replace the existing tbody td rule */
+.table tbody td {
+    padding: 0.6rem 0.75rem;    /* was 1rem 1.5rem */
+    vertical-align: middle;
+    color: #4a5568;
+    font-size: 0.8rem;          /* was 0.9rem */
+    border-bottom: 1px solid #edf2f7;
+    white-space: nowrap;
+}
+.table tbody tr:hover td {
+    background-color: #f7fafc;
+}
+.empty-state {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.empty-state i {
+    font-size: 3rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid #edf2f7;
+    padding: 1rem 1.5rem;
+}
+.btn-outline-primary {
+    border-radius: 8px;
+    font-weight: 500;
+}
