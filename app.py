@@ -32,7 +32,7 @@ def index():
     batch_size = 15
     
     # Calculate the starting index for the stored procedure
-    start_index = (page - 1) * batch_size
+    start_index = page - 1
 
     users = []
     columns = []
