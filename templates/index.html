@@ -74,7 +74,7 @@
                     <thead>
                         <tr>
                             {% for col in columns %}
-                                <th class="text-nowrap">{{ col | replace('_', ' ') }}</th>
+                                <th class="text-nowrap">{{ col | replace('_', ' ') | title }}</th>
                             {% endfor %}
                         </tr>
                     </thead>
@@ -89,31 +89,34 @@
                     </tbody>
                 </table>
             {% else %}
-                <div class="empty-state">
-                    <i class="bi bi-inbox"></i>
-                    <h5 class="text-dark mt-2">No Records Found</h5>
+                <div class="empty-state p-5 text-center">
+                    <i class="bi bi-inbox fs-1 text-muted"></i>
+                    <h5 class="text-dark mt-3">No Records Found</h5>
                     <p class="text-muted mb-0">Adjust your configuration and generate a new batch.</p>
                 </div>
             {% endif %}
         </div>
         
         {% if users %}
-        <div class="card-footer d-flex justify-content-between align-items-center">
+        <div class="card-footer d-flex justify-content-between align-items-center bg-white p-3">
             <span class="text-muted small">
                 <i class="bi bi-file-earmark-text me-1"></i> Showing Page <strong class="text-dark">{{ page }}</strong>
             </span>
             
-            <form action="/" method="GET" class="m-0">
-                <input type="hidden" name="locale" value="{{ locale }}">
-                <input type="hidden" name="seed" value="{{ seed }}">
-                <input type="hidden" name="page" value="{{ page + 1 }}">
-                <button type="submit" class="btn btn-outline-primary btn-sm px-3">
+            <div class="d-flex gap-2">
+                {% if page > 1 %}
+                <a href="/?locale={{ locale }}&seed={{ seed }}&page={{ page - 1 }}" class="btn btn-outline-secondary btn-sm px-3">
+                    <i class="bi bi-chevron-left me-1"></i> Previous
+                </a>
+                {% endif %}
+                
+                <a href="/?locale={{ locale }}&seed={{ seed }}&page={{ page + 1 }}" class="btn btn-outline-primary btn-sm px-3">
                     Next Batch <i class="bi bi-chevron-right ms-1"></i>
-                </button>
-            </form>
+                </a>
+            </div>
         </div>
         {% endif %}
-    </div>
+        </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
